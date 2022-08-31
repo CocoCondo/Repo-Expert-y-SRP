@@ -18,7 +18,7 @@ namespace Library
         }
         private static bool ValidarDoctor(Doctor doc)//Clase privada porque no me interesa que se sepa fuera de la clase
         {
-            if(String.IsNullOrEmpty(doc.Name) || String.IsNullOrEmpty(doc.Especialidad))
+            if(String.IsNullOrEmpty(doc.Name) || String.IsNullOrEmpty(doc.Especialidad) || String.IsNullOrEmpty(doc.Consultorio))
             {
                 return false;
             }
