@@ -14,8 +14,6 @@ namespace Program
             AppointmentService.CreateAppointment(Ale, DrNacho);
             AppointmentService.CreateAppointment(Ale, DrCoco);
             AppointmentService.CreateAppointment(Michel, DrNacho);//Creo tres consultas
-
-
         }
     }
 }
