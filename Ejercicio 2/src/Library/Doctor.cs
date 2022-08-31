@@ -8,13 +8,13 @@ CONSIGNA (Para mi referencia)
 4. Cada dato que se ingrese al sistema debe ser válidado.*/
 namespace Library
 {
-    public class Doctors //Creo una clase Clients para administrar los clientes como objetos separados
+    public class Doctor //Creo una clase Clients para administrar los clientes como objetos separados
     {
         public string Name {get; set;}
         public string Especialidad {get; set;}
         public string Consultorio {get; set;}
 
-        public Doctors(string name, string especialidad, string consultorio)//Agrego también el dato edad
+        public Doctor(string name, string especialidad, string consultorio)//Agrego también el dato edad
         {
             this.Name = name;
             this.Especialidad = especialidad;

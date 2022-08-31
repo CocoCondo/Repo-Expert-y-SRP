@@ -10,10 +10,18 @@ namespace Library
     modificadas sin necesitar cambiar la clase para crear las consultas.*/
     {
         public static int IdUnico = 0;
-        public static void CreateAppointment(Clients cliente, Doctors doctor) //En vez de un string lo paso a void porque no me interesa que retorne nada. Solo que me informe en consola
+        public static void CreateAppointment(Client cliente, Doctor doctor) //En vez de un string lo paso a void porque no me interesa que retorne nada. Solo que me informe en consola
         {
-            IdUnico ++; //Cada vez que se crea un appointment, le asigno un ID de consulta acumulativo
-            Console.WriteLine($"CONSULTA {IdUnico} CREADA: {cliente} a la hora {DateTime.Now.ToShortDateString()} con {doctor}");
+            if(Validate.ValidarConsulta(doctor,cliente)) //Valido los datos del doctor y cliente para crear la consulta
+            {
+                IdUnico ++; //Cada vez que se crea un appointment, le asigno un ID de consulta acumulativo
+                Console.WriteLine($"CONSULTA {IdUnico} CREADA: {cliente} a la hora {DateTime.Now.ToShortDateString()} con {doctor}");
+            }
+            else
+            {
+                Console.WriteLine("Imposible crear la consulta. Los datos son incorrectos."); //En caso de que los datos sean incorrectos
+            }
+            
         }
 
     }
