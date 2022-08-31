@@ -15,6 +15,10 @@ namespace Program
             AppointmentService.CreateAppointment(Ale, DrCoco, new DateTime(2022,09,21));
             AppointmentService.CreateAppointment(Michel, DrNacho, new DateTime(2022,09,22));//Creo tres consultas
             Console.WriteLine(AppointmentService.Reservas[0]); //Chequeo la info de la primer consulta
+            
+            
+            
+            //LOS CRC ESTÁN COMO UN PDF EN EL GITHUB
         }
     }
 }
