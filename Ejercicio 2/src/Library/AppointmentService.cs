@@ -4,49 +4,16 @@ using System.Text;
 namespace Library
 {
     public class AppointmentService
+    /* Esta clase permite agregar una sola consulta y necesita ingresar sus datos individualmente cada vez que se ejecuta.
+    Lo ideal para cumplir con el principio SRP es que hayan clases que gestionen los diferentes datos.
+    A su vez, para permitir las modificaciones que permite la consigna, es necesario crear diferentes clases que permitan ser
+    modificadas sin necesitar cambiar la clase para crear las consultas.*/
     {
-        public static string CreateAppointment(string name, string id, string phoneNumber, DateTime date, string appoinmentPlace, string doctorName)
+        public static int IdUnico = 0;
+        public static void CreateAppointment(Clients cliente, Doctors doctor) //En vez de un string lo paso a void porque no me interesa que retorne nada. Solo que me informe en consola
         {
-            StringBuilder stringBuilder = new StringBuilder("Scheduling appointment...\n");
-            Boolean isValid = true;
-
-            if (string.IsNullOrEmpty(name))
-            {
-                stringBuilder.Append("Unable to schedule appointment, 'name' is required\n");
-                isValid = false;
-            }
-
-            if (string.IsNullOrEmpty(id))
-            {
-                stringBuilder.Append("Unable to schedule appointment, 'id' is required\n");
-                isValid = false;
-            }
-
-            if (string.IsNullOrEmpty(phoneNumber))
-            {
-                stringBuilder.Append("Unable to schedule appointment, 'phone number' is required\n");
-                isValid = false;
-            }
-
-            if (string.IsNullOrEmpty(appoinmentPlace))
-            {
-                stringBuilder.Append("Unable to schedule appointment, 'appoinment place' is required\n");
-                isValid = false;
-            }
-
-
-            if (string.IsNullOrEmpty(doctorName))
-            {
-                stringBuilder.Append("Unable to schedule appointment, 'doctor name' is required\n");
-                isValid = false;
-            }
-
-            if (isValid)
-            {
-                stringBuilder.Append("Appoinment scheduled");
-            }
-
-            return stringBuilder.ToString();
+            IdUnico ++; //Cada vez que se crea un appointment, le asigno un ID de consulta acumulativo
+            Console.WriteLine($"CONSULTA {IdUnico} CREADA: {cliente} a la hora {DateTime.Now.ToShortDateString()} con {doctor}");
         }
 
     }
