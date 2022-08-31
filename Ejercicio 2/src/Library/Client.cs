@@ -24,7 +24,7 @@ namespace Library
         }
         public override string ToString()
         {
-            return $"Cliente: {this.Name}, ID: {this.Id}, {this.Id} años, TEL: {this.PhoneNumber}";
+            return $"Cliente: {this.Name}, ID: {this.Id}, {this.Age} años, TEL: {this.PhoneNumber}";
         }
     }
 }

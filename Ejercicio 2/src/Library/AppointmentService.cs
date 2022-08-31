@@ -15,7 +15,7 @@ namespace Library
             if(Validate.ValidarConsulta(doctor,cliente)) //Valido los datos del doctor y cliente para crear la consulta
             {
                 IdUnico ++; //Cada vez que se crea un appointment, le asigno un ID de consulta acumulativo
-                Console.WriteLine($"CONSULTA {IdUnico} CREADA: {cliente} a la hora {DateTime.Now.ToShortDateString()} con {doctor}");
+                Console.WriteLine($"CONSULTA {IdUnico} CREADA: {cliente} el día {DateTime.Now.ToShortDateString()} con {doctor}");
             }
             else
             {
