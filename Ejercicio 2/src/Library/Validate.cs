@@ -5,7 +5,7 @@ namespace Library
 {
     public class Validate //Creo una clase para validar
     {
-        public static bool ValidarConsulta(Doctor doctor, Client cliente)
+        public static bool ValidarConsulta(Client cliente, Doctor doctor)
         {
             if(ValidarCliente(cliente) && ValidarDoctor(doctor))
             {
